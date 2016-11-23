@@ -1,0 +1,8 @@
+<h3>Top Tickets</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let ticketItem of tickets"  [routerLink]="['/tickets', ticketItem.id]"  class="col-1-4">
+    <div class="module ticket">
+      <h4>{{ticketItem.name}}</h4>
+    </div>
+  </a>
+</div>
