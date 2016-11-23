@@ -23,7 +23,7 @@ export class TicketService {
   }
 
   insertTicket(ticket: Ticket): Promise<Ticket>{
-    return this.http.put(urlBase, ticket).toPromise().then(response=>response.json() as Ticket).catch(this.handleError);
+    return this.http.post(urlBase, ticket).toPromise().then(response=>response.json() as Ticket).catch(this.handleError);
   }
 
   deleteTicket(id:string): Promise<any>{
