@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Params}from'@angular/router';
+import {ActivatedRoute, Params, Router}from'@angular/router';
 import {Location}from'@angular/common';
 import 'rxjs/add/operator/switchMap';
 
@@ -14,7 +14,7 @@ import {TicketService}from'../../services/ticket.service';
 export class TicketDetailComponent implements OnInit {
   ticket:Ticket;
 
-  constructor(private ticketService:TicketService, private route: ActivatedRoute, private location:Location) { }
+  constructor(private ticketService:TicketService, private route: ActivatedRoute, private router: Router, private location:Location) { }
 
   ngOnInit() {
     this.route.params.switchMap((params:Params)=>this.ticketService.getTicket(params['id']))
@@ -23,6 +23,10 @@ export class TicketDetailComponent implements OnInit {
 
   goBack():void{
     this.location.back();
+  }
+
+  deleteTicket():void{
+    this.ticketService.deleteTicket(this.ticket.id).then(result=>{this.router.navigate(['tickets']);}).catch(err=>{});
   }
 
 }

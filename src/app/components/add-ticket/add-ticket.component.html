@@ -1,0 +1,16 @@
+
+<div>
+  <label>Name:</label><input [(ngModel)]='name' placeholder="name">
+</div>
+
+<div>
+  <label>Description:</label><input [(ngModel)]='description' placeholder="description">
+</div>
+
+
+<div *ngIf='result'>
+  {{result}}
+</div>
+
+<button (click)="submit()">Submit</button>
+<button (click)="goBack()">Back</button>

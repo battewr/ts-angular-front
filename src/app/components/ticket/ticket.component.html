@@ -1,5 +1,7 @@
 
 <h2>Ticket List</h2>
+
+<a [routerLink]="['/insertTicket']">Add Ticket</a>
 <ul class='tickets'>
   <li *ngFor='let ticketItem of tickets' [class.selected]='ticketItem===selectedTicket' (click)='onSelect(ticketItem)'>
     <span class='badge'>{{ticketItem.id}}: </span>{{ticketItem.name}}

@@ -1,15 +1,17 @@
 <div *ngIf="ticket">
-  <h2>
+  <!--<h2>
     Task Title {{ticket.name}}
-  </h2>
+  </h2>-->
+  task title <span class='emphasis'>{{ticket.name | uppercase}}</span>
   <div>
     <label>id: </label>{{ticket.id}}
   </div>
   <div>
-    <label>name: </label>{{ticket.name}}
-  </div>
-  <div>
     <label>name: </label><input [(ngModel)]='ticket.name' placeholder="name">
   </div>
+  <div>
+    <label>description: </label><input [(ngModel)]='ticket.description' placeholder="description">
+  </div>
+  <button (click)="deleteTicket()">Delete</button>
   <button (click)="goBack()">Back</button>
 </div>

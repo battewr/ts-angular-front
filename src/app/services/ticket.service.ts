@@ -22,6 +22,14 @@ export class TicketService {
     return this.http.get(urlBase+'/'+id).toPromise().then(response=>response.json() as Ticket).catch(this.handleError);
   }
 
+  insertTicket(ticket: Ticket): Promise<Ticket>{
+    return this.http.put(urlBase, ticket).toPromise().then(response=>response.json() as Ticket).catch(this.handleError);
+  }
+
+  deleteTicket(id:string): Promise<any>{
+    return this.http.delete(urlBase+'/'+id).toPromise().then(response=>"OK").catch(this.handleError);
+  }
+
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);

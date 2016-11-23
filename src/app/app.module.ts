@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { TicketDetailComponent } from './components/ticket-detail/ticket-detail.component';
 import { TicketComponent } from './components/ticket/ticket.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AddTicketComponent } from './components/add-ticket/add-ticket.component';
 
 import {AppRoutingModule} from "./modules/routing.module";
 
@@ -16,7 +17,8 @@ import {AppRoutingModule} from "./modules/routing.module";
     AppComponent,
     TicketDetailComponent,
     TicketComponent,
-    DashboardComponent
+    DashboardComponent,
+    AddTicketComponent
   ],
   imports: [
     BrowserModule,
