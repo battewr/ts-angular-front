@@ -20,7 +20,6 @@ export class TicketComponent implements OnInit {
   }
 
     private getTickets():void{
-    //this.tickets = this.ticketService.getTickets();
     this.ticketService.getTickets().then(tickets=>this.tickets = tickets);
   }
 

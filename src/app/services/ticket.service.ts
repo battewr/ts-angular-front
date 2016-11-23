@@ -15,12 +15,10 @@ export class TicketService {
   constructor(private http: Http) { }
 
   getTickets(): Promise<Ticket[]> {
-    //return Promise.resolve(TICKETS);
     return this.http.get(urlBase).toPromise().then(response => response.json() as Ticket[]).catch(this.handleError);
   }
 
   getTicket(id: string): Promise<Ticket> {
-    //return this.getTickets().then(ticket => ticket.find(ticket => ticket.id === id));
     return this.http.get(urlBase+'/'+id).toPromise().then(response=>response.json() as Ticket).catch(this.handleError);
   }
 
